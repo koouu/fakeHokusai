@@ -1,53 +1,50 @@
-from flask import Flask, render_template, request, redirect, url_for, send_from_directory
-#from werkzeug import secure_filename
+# フェイク北斎
 
-from UGATIT import UGATIT
-from utils import *
+初めてのハッカソン ～オンライン開発合宿vol.3～
 
-import torch
-import numpy as np
-import cv2
-#from image_process import canny
-from datetime import datetime
-import os
-import string
-import random
+* python 3.7.10
+* pytorch 1.8.0
+* torchaudio 0.8.0
+* torchvision 0.9.0
+* cuda 10.2
 
+使い方
 
-SAVE_DIR = "./images"
+以下のURLから変換モデルをダウンロードしてください
 
+cpu用
+https://drive.google.com/file/d/1UJyj5q1o-A-AnHabFfA08ivw6F6I0xSR/view?usp=sharing
 
-
-app = Flask(__name__)
-
-@app.route('/upload')
-def upload_file():
-   return render_template('hackathon.html')
+gpu用
+https://drive.google.com/file/d/1CKZD36aol6KZsfWibiY3aI9-1MWJCU24/view?usp=sharing
 
 
-@app.route('/uploader', methods = ['GET', 'POST'])
-def uploader_file():
-    
-   gan=UGATIT()
-   gan.build_model()  
-   if request.method == 'POST':
-      stream = request.files['file'].stream
-      img_array = np.asarray(bytearray(stream.read()), dtype=np.uint8)
-      img = cv2.imdecode(img_array, 1)
-      save_path = os.path.join(SAVE_DIR,"aa.jpg")
-      cv2.imwrite(save_path, img)
-      #tt=torch.as_tensor(img)
-      #print(type(tt))
-      #cv2.imwrite(os.path.join('Base_%d.png' % (10 + 1)), RGB2BGR(tensor2numpy(denorm(tt))) * 255.0)
-      gan.test()
-      
-      
-      f = request.files['file']
-      #f.save(secure_filename(f.filename))
-      return render_template("hackathon.html", user_image = f.filename)
-		
-if __name__ == '__main__':
-    
-      
+model.ptをmodelフォルダの中に入れてください。
 
-   app.run(debug = True)
+```
+python main.py
+```
+
+立ち上がったローカルサーバーにアクセス  
+
+http://127.0.0.1:5000/upload
+
+画像をアップロードし変換
+
+
+変換だけしたい場合
+
+dataset/picture2art/testAの中にある画像をすべて変換します
+
+```
+python test.py  
+```
+
+
+
+
+
+
+
+
+
