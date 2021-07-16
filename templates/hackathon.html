@@ -1,0 +1,275 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Cache-Control" content="no-cache">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <!-- CSS only -->
+  <link href="/" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link rel="shortcut icon" href="favicon.ico">
+
+  <meta name="theme-color" content="#fafafa">
+
+  <style>
+  h1 {
+  position: relative;
+  color: #158b2b;
+  font-size: 40px;
+  padding: 0px 0;
+  text-align: center;
+  margin: 0em 0;
+}
+h1:before {
+  content: "";
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  width: 300px;
+  height: 80px;
+  border-radius: 50%;
+  border: 5px solid #a6ddb0;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+/* 設置例 */
+.bg-imgs {
+  background: url(https://dubdesign.net/wp-content/uploads/2021/01/graybg.png) 0 0 repeat;
+  margin-top: 40px;
+  padding: 20px 20px 0;
+}
+
+.bg-imgs img {
+transform:translateY(-20px);
+color: #313131;
+font-weight: 600;
+}
+
+  .mt-imgs {
+    padding: 0;
+    margin-top:70px;
+    border:solid 3px black;
+    width: 250px;
+    height: 175px;
+  }
+
+  .ya-imgs{
+    padding: :0
+    width:200px;
+    height: 150px;
+  }
+  </style>
+
+
+</head>
+
+<body>
+
+  <div class="bg-imgs">
+  <div class="container">
+  <h1>フェイク北斎</h1><br>
+
+  <inline>
+    <img class="mt-imgs" src="/static/images//mt.png">
+    <img class="ya-imgs" src="/static/images/tns.png">
+    <img class="mt-imgs" src="/static/images/hokusaimt.png">
+  </inline>
+
+  <div class="ribbon6">
+    <h3>読み込んだ画像を葛飾北斎風にするよ</h3>
+  </div>
+
+
+  <p>↓変換したいファイルを選択してね</p>
+  <form action = "http://localhost:5000/uploader" method = "POST"
+     enctype = "multipart/form-data">
+     <input type = "file" name = "file" id="selfile" />
+     <input type = "submit"/>
+  </form>
+
+  <div id="bg"></div>
+  <style type="text/css">
+  textarea{ width:100; height:100; margin:10px 0px }
+  div#bg{ width:300px;  height:200px; border:1px solid black; overflow:auto }
+  </style>
+
+  <style>
+  .ribbon6 {
+  display: inline-block;
+  position: relative;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  padding: 7px 0;
+  font-size: 18px;
+  background: #acd879;
+  color: #FFF;
+  box-sizing: border-box;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+.ribbon6 h3 {
+  margin: 0;
+  padding: 0 30px;
+  border-top: dashed 2px rgba(255, 255, 255, 0.5);
+  border-bottom: dashed 2px rgba(255, 255, 255, 0.5);
+  line-height: 42px;
+}
+
+.ribbon6:before, .ribbon6:after {
+  position: absolute;
+  content: '';
+  width: 0px;
+  height: 0px;
+  z-index: 1;
+}
+
+.ribbon6:before {
+  top: -2px;
+  left: -2px;
+  border-width: 32px 0px 32px 15px;
+  border-color: transparent transparent transparent #fff;
+  border-style: solid;
+}
+
+.ribbon6:after {
+  top: -2px;
+  right: -2px;
+  border-width: 32px 15px 32px 0px;
+  border-color: transparent #fff transparent transparent;
+  border-style: solid;
+}
+/*
+.rei5 {
+  width: 300px;
+  height: 200px;
+  position: relative;
+}
+*/
+.arrow{
+    position: relative;
+    display: inline-block;
+    padding: 0 0 0 16px;
+    color: #000;
+    vertical-align: middle;
+    text-decoration: none;
+    font-size: 15px;
+}
+.arrow::before,
+.arrow::after{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    content: "";
+    vertical-align: middle;
+}
+.sample3-5::before {
+    left: 7px;
+    box-sizing: border-box;
+    width: 5px;
+    height: 5px;
+    border: 5px solid transparent;
+    border-left: 5px solid #7a0;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+.sample3-5::after {
+    top: 7px;
+    left: -2px;
+    border: 0 solid transparent;
+    border-left: 3px solid #7a0;
+    border-radius: 0 0 0 10px;
+    width: 8px;
+    height: 8px;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+.sample2-2::before{
+  width: 12px;
+  height: 2px;
+  background: #7a0;
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+.sample2-2::after{
+  left: 1px;
+  width: 8px;
+  height: 8px;
+  border-top: 2px solid #7a0;
+  border-right: 2px solid #7a0;
+}
+
+.rei5 img {
+  position: absolute;
+  display: block;
+  width: 200px;             /* 圧縮後画像幅 */
+  height: 150px;            /* 圧縮後画像高 */
+  top: 1;                   /* 1のとき余白が上→画像は下揃え */
+  right: 0;                 /* 1のとき余白が上→画像は下揃え */
+  bottom: 0;                /* 1のとき余白が上→画像は下揃え */
+  left: 0;                  /* 1のとき余白が上→画像は下揃え */
+  margin: auto;
+}</style>
+
+
+  <script src=jquery.js>
+  </script>
+  <script>
+  var obj1 = document.getElementById("selfile");
+  let url;
+  obj1.addEventListener("change", function(evt){
+    var file = evt.target.files;
+    var reader = new FileReader();
+
+    //dataURL形式でファイルを読み込む
+    reader.readAsDataURL(file[0]);
+    //ファイルの読込が終了した時の処理
+    reader.onload = function(){
+      var dataUrl = reader.result;
+      url = dataUrl;
+      //読み込んだ画像とdataURLを書き出す
+      document.getElementById("bg").innerHTML = "<img src='" + dataUrl + "' width=250>";
+      /*document.getElementById("dturl").value = dataUrl;*/
+    }
+
+  },false);
+
+  let ctx;
+
+    function appear() {
+      const canvas = document.getElementById("canvas");
+      ctx = canvas.getContext("2d");
+
+      let img = document.getElementById("img1");
+      ctx.drawImage(img, 0, 0, 250, 175);
+    }
+  </script>
+  <!-- Content here -->
+
+
+  <div><input type="button" class="mt-2 btn btn-primary" value="変換" onclick="appear()"/></div>
+  <img class="mt-imgs" src={{chenge_image}} id="img1" style="display: none;">
+  <canvas id="canvas" width="500" height="500"></canvas>
+  </div>
+  </div>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+body{
+    background-color:MintCream;    /* 背景色 */
+}
+h1 {
+    color: DarkCyan;    /* テキストカラー */
+    font-size: 48pt;
+    margin:16px;
+}
+p{
+    font-size: 16pt;
+    margin:16px;
+}
+
+#footer{
+    padding:10px 0;
+    background-color:LightSeaGreen    /* フッター背景色 */
+}
+
+#flink a{
+    padding:0 10px;
+    color:#fff;    /* フッター文字色 */
+    text-decoration:none;    /* リンク装飾なし */
+}
+
+#flink li{
+    display:inline;    /* 横並びへ */
+}

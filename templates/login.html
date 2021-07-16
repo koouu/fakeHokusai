@@ -1,0 +1,50 @@
+<html>
+    <head>
+
+    </head>
+
+    <body>
+        <form action="/login_manager" method="POST">
+            <input type="text" name="username" placeholder="Your name">
+            <input type="file" name="image" placeholder=image">
+            <input type="submit" value="login">
+<div class="container">
+	<h1>あなたの顔を長崎にするページ</h1><br>
+ 	<p>↓変換したいファイルを選択してね</p>
+  	<input type="file" id="selfile" name="images"><br>
+<input type="text" name="name" placeholder="Your name"><br>
+
+<div id="bg"></div>
+        </form>
+	
+
+  	
+<style type="text/css">
+  textarea{ width:100; height:100; margin:10px 0px }
+  div#bg{ width:300px;  height:200px; border:1px solid black; overflow:auto }
+  </style>
+
+  <style>
+/*
+.rei5 {
+  width: 300px;
+  height: 200px;
+  position: relative;
+}
+*/
+
+
+.rei5 img {
+  position: absolute;
+  display: block;
+  width: 200px;             /* 圧縮後画像幅 */
+  height: 150px;            /* 圧縮後画像高 */
+  top: 1;                   /* 1のとき余白が上→画像は下揃え */
+  right: 0;                 /* 1のとき余白が上→画像は下揃え */
+  bottom: 0;                /* 1のとき余白が上→画像は下揃え */
+  left: 0;                  /* 1のとき余白が上→画像は下揃え */
+  margin: auto;
+}</style>
+
+    </body>
+</html>
