@@ -1,6 +1,0 @@
-1.7.1
-
-https://fmorenovr.medium.com/set-up-conda-environment-pytorch-1-7-cuda-11-1-96a8e93014cc
-
-
-python main.py --dataset picture2art --img_size 128 --light False --phase test 

@@ -98,7 +98,7 @@ class UGATIT(object) :
             """
             A2B = np.concatenate((RGB2BGR(tensor2numpy(denorm(real_A[0]))),
                                   RGB2BGR(tensor2numpy(denorm(fake_A2B[0])))), 0)
-
+            print(os.path.join('results',self.dataset, 'test', 'A2B_%d.png' % (n + 1)))
             cv2.imwrite(os.path.join('results',self.dataset, 'base', 'A2B_%d.png' % (n + 1)), RGB2BGR(tensor2numpy(denorm(real_A[0]))) * 255.0)
             cv2.imwrite(os.path.join('results',self.dataset, 'test', 'A2B_%d.png' % (n + 1)), RGB2BGR(tensor2numpy(denorm(fake_A2B[0]))) * 255.0)
             
