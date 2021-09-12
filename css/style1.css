@@ -1,0 +1,179 @@
+body{
+  margin:0;
+  margin-top: 0;
+  background-color: #FFFFFF;
+  min-width: 1500px;
+  padding: 0;
+  z-index: 0;
+  font-family: "Sawarabi Mincho";
+  background-image: url(../img/back1.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+p,h1,h2,h3,h4,h5,h6{
+  margin-top:0;
+}
+#header{
+  background-color: #D76213;
+  min-width: 1000px;
+  /*background-color: #C7D5ED;*/
+  position: fixed;
+  top:0;
+  width: 100%;
+  margin-bottom: 0px;
+  border-bottom: solid;
+  border-color: #6A5E30;
+  height: 105px;
+  z-index: 1;
+}
+#preview{
+  width: 500px;
+  margin: 10px;
+}
+.p1{
+  font-size: 30px;
+  padding-top: 20px;
+  margin-right: 50px;
+  margin-bottom: 10px;
+  border-bottom: double 3px;
+}
+#p2 {
+  clear: both;
+}
+div{
+  margin: 0;
+}
+ul{
+  margin:0;
+  padding: 0;
+
+}
+.boxA{
+  width: auto;
+  display: flex;
+}
+.logo{
+  display:flex;
+  float:left;
+  margin-left: 40px;
+  margin-top: 0px;
+  padding: 0;
+}
+.logo-size{
+height: 80px;
+width: auto;
+padding: 0;
+}
+.icon{
+height: 80px;
+width: auto;
+padding: 0;
+}
+.title-size{
+  width:1000px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  height: auto;
+  padding-left: 200px;
+}
+.global-nav{
+  float:right;
+  margin-top: 40px;
+  display: flex;
+  position: relative;
+}
+.global-nav li{
+  float:left;
+  margin:0 20px;
+  font-size: 20px;
+  list-style:none;
+}
+.global-nav a{
+  display: block;
+}
+.a1{
+  color: #FFFFFF;
+  padding-top:5px;
+  font-size: 25px;
+  font-weight: 400;
+  text-decoration: none;
+}
+.a1:visited{
+  color: #FFFFFF;
+  /*color:#6A5E30;*/
+}
+.a1:hover{
+  text-decoration: underline;
+}
+.su{
+  padding-top: 30px;
+  padding-left: 50px;
+  padding-right: 50px;
+  min-height: 1500px;
+}
+
+
+.c1{
+  padding-top: 20px;
+  margin-right: 50px;
+  margin-bottom: 0;
+  font-size: 23px;
+  line-height: 40px;
+}
+.back1{
+  background-image: url(../img/back2.png);
+  width: 1400px;
+  padding-left: 50px;
+  padding-bottom: 50px;
+}
+
+.example-size{
+  width:1000px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  height: auto;
+  padding-left: 100px;
+}
+
+.btn-flat-dashed-filled {
+  display: inline-block;
+  padding: 0.5em 9em;
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-bottom: 5px;
+  text-decoration: none;
+  color: #D76213;
+  border: dashed 1px #D76213;
+  background: #fff;
+  border-radius: 3px;
+  transition: .4s;
+
+}
+label>input{
+  display: none;
+}
+#label>input{
+  display: block;
+}
+
+.btn-flat-dashed-filled:hover {
+  background: #F6C09C;
+  color: #fff;
+}
+
+.btn-send {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  color: #D76213;
+  background: #FFFFFF;
+  border: solid 2px #D76213;
+  border-radius: 3px;
+  transition: .4s;
+}
+
+.btn-send:hover {
+  background: #D76213;
+  color: white;
+}
