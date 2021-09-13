@@ -4,7 +4,6 @@
 
 flask==1.1.2
 numpy==1.20.1
-numpy-base==1.20.1
 opencv==3.4.2
 pytorch==1.8.0
 requests==2.26.0
