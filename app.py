@@ -53,7 +53,7 @@ def uploader_file():
 
 @app.route("/")
 def hello():
-    return "Hello, World!"
+    return render_template('hokusai.html')
 
 @app.route('/test')
 def test():
