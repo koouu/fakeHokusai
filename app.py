@@ -51,6 +51,10 @@ def uploader_file():
       return render_template("hokusai.html", user_image = f.filename,chenge_image="/static/images/upload/" + rename_str)
 """
 
+@app.route("/")
+def hello():
+    return "Hello, World!"
+
 @app.route('/test')
 def test():
    return render_template('hokusai.html')
