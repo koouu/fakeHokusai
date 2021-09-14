@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, send_from_directory
+from flask import Flask #, render_template, request, redirect, url_for, send_from_directory
 """
 # from werkzeug import secure_filename
 
@@ -52,7 +52,7 @@ def uploader_file():
 """
 
 @app.route('/test')
-def upload_file():
+def test():
    return render_template('hokusai.html')
 if __name__ == '__main__':
     
