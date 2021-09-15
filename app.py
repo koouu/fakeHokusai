@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for, send_from_directory
-"""
+
 # from werkzeug import secure_filename
 
 from UGATIT import UGATIT
@@ -14,14 +14,14 @@ import os
 import string
 import random
 import rstr
-"""
+
 
 SAVE_DIR = "./static/images/download"
 
 
 
 app = Flask(__name__)
-"""""
+
 @app.route('/upload')
 def upload_file():
    return render_template('hokusai.html')
@@ -49,7 +49,7 @@ def uploader_file():
       f = request.files['file']
       #f.save(secure_filename(f.filename))
       return render_template("hokusai.html", user_image = f.filename,chenge_image="/static/images/upload/" + rename_str)
-"""
+
 
 @app.route("/")
 def hello():
