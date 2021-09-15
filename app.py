@@ -2,8 +2,11 @@ from flask import Flask, render_template, request, redirect, url_for, send_from_
 
 # from werkzeug import secure_filename
 
-import cv2
+
+
 """
+import cv2
+
 from UGATIT import UGATIT
 from utils import *
 
@@ -63,6 +66,6 @@ def test():
    return render_template('hokusai.html')
 if __name__ == '__main__':
     
-      
+   
 
    app.run(debug = True)
