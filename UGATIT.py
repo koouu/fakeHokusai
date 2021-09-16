@@ -1,4 +1,4 @@
-import time, itertools
+
 from dataset import ImageFolder
 from torchvision import transforms
 from torch.utils.data import DataLoader
