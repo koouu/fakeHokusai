@@ -76,12 +76,12 @@ def test():
    return render_template('hokusai.html')
 
 if __name__ == '__main__':
-   """
+   
    gdd.download_file_from_google_drive(file_id='1xmKOuYYdja_awSjV29EiaU5guIi6nLL0',
                                     dest_path='./models/HokusaiAI.pt',
                                     unzip=False)
    
-   """
+   
    url = "https://drive.google.com/uc?export=download&id=1xmKOuYYdja_awSjV29EiaU5guIi6nLL0"
    file_name = "file_name.pt"
    urllib.request.urlretrieve(url, file_name)
