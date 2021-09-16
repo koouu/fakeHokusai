@@ -1,5 +1,10 @@
 Flask>=1.0,<=1.1.2
 
+--find-links https://download.pytorch.org/whl/torch_stable.html
+torch==1.8.0+cpu
+
 googledrivedownloader==0.4
+
+opencv-python=3.4.2
 
 requests==2.26.0

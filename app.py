@@ -8,7 +8,7 @@ import sys
 
 import os
 
-"""
+
 import cv2
 
 from UGATIT import UGATIT
@@ -23,7 +23,7 @@ from datetime import datetime
 import string
 import random
 import rstr
-"""
+
 
 
 SAVE_DIR = "./static/images/download"
@@ -31,7 +31,7 @@ SAVE_DIR = "./static/images/download"
 
 
 app = Flask(__name__)
-"""
+
 @app.route('/upload')
 def upload_file():
    return render_template('hackathon.html')
@@ -60,7 +60,7 @@ def uploader_file():
       #f.save(secure_filename(f.filename))
       return render_template("hackathon.html", user_image = f.filename,chenge_image="/static/images/upload/" + rename_str)
 
-"""
+
 @app.route("/")
 def hello():
    
