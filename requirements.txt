@@ -1,6 +1,7 @@
 Flask>=1.0,<=1.1.2
 
-torch==1.8.0
+--find-links https://download.pytorch.org/whl/torch_stable.html
+torch==1.8.0+cpu
 
 torchaudio==0.8.0
 torchvision==0.9.0
