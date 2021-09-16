@@ -1,8 +1,8 @@
 from flask import Flask, render_template, request, redirect, url_for, send_from_directory
-from google_drive_downloader import GoogleDriveDownloader as gdd
+#from google_drive_downloader import GoogleDriveDownloader as gdd
 # from werkzeug import secure_filename
 
-import os
+#import os
 
 """
 import cv2
@@ -59,11 +59,13 @@ def uploader_file():
 """
 @app.route("/")
 def hello():
+   """
    if (os.path.exists('./models/HokusaiAI.pt')):
       return "Hello"
    else:
       return "Not Hello"
-    #return render_template('ch.html')
+   """
+   return render_template('ch.html')
 
 @app.route('/test')
 def test():
