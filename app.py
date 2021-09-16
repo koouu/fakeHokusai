@@ -58,8 +58,10 @@ def uploader_file():
 @app.route("/")
 def hello():
    
-   if (os.path.exists('./dataset.py')):
+   if (os.path.exists('./models/HokusaiAI.pt')):
       return "Hello"
+   elif (os.path.exists('./models/.txt')):
+      return "t Hello"
    else:
       return "Not Hello"
    
@@ -70,5 +72,5 @@ def test():
    return render_template('hokusai.html')
 
 if __name__ == '__main__':
-
+   
    app.run(debug = True)
