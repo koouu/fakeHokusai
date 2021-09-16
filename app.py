@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, send_from_
 #googledrivedownloader==0.4
 #from google_drive_downloader import GoogleDriveDownloader as gdd
 
-
+from UGATIT import UGATIT
 
 
 import os
@@ -12,7 +12,7 @@ app = Flask(__name__)
 """
 import cv2
 
-from UGATIT import UGATIT
+
 from utils import *
 
 
