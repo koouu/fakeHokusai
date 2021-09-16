@@ -30,16 +30,14 @@ class UGATIT(object) :
     ##################################################################################
     # Model
     ##################################################################################
-
+    """
     def build_model(self):
         
         
         self.genA2B = ResnetGenerator(input_nc=3, output_nc=3, ngf=self.ch, n_blocks=self.n_res, img_size=self.img_size, light=self.light).to(self.device)
         
         
-        print("build_finished")
-        t_gpu = torch.tensor([0.1, 0.2], device='cpu')
-        print(t_gpu.is_cuda)
+        
         
         
 
@@ -51,6 +49,7 @@ class UGATIT(object) :
         
 
     def test(self,image_name):
+        
         model_list = glob(os.path.join('model', 'HokusaiAI.pt'))
         
         print(torch.__version__)
@@ -79,7 +78,7 @@ class UGATIT(object) :
         
         testA_loader = DataLoader(testA, batch_size=1, shuffle=False)
         
-        """
+        ""
         real_A = real_A.to(self.device)
 
         fake_A2B, _, fake_A2B_heatmap = self.genA2B(real_A)
@@ -90,21 +89,21 @@ class UGATIT(object) :
         cv2.imwrite(os.path.join(self.result_dir, self.dataset, 'test', 'Base_%d.png' % (n + 1)), RGB2BGR(tensor2numpy(denorm(real_A[0]))) * 255.0)
             
         cv2.imwrite(os.path.join(self.result_dir, self.dataset, 'test', 'A2B_%d.png' % (n + 1)), RGB2BGR(tensor2numpy(denorm(fake_A2B[0]))) * 255.0)
-        """
+        ""
         for n, (real_A, _) in enumerate(testA_loader):
             real_A = real_A.to(self.device)
             print(type(real_A))
             fake_A2B, _, _ = self.genA2B(real_A)
-            """
+            ""
             fake_A2B2A, _, fake_A2B2A_heatmap = self.genB2A(fake_A2B)
 
             fake_A2A, _, fake_A2A_heatmap = self.genB2A(real_A)
-            """
+            ""
             A2B = np.concatenate((RGB2BGR(tensor2numpy(denorm(real_A[0]))),
                                   RGB2BGR(tensor2numpy(denorm(fake_A2B[0])))), 0)
 
             
             cv2.imwrite(os.path.join('static','images','upload', image_name), RGB2BGR(tensor2numpy(denorm(fake_A2B[0]))) * 255.0)
             
-        
+    """
         
