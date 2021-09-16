@@ -2,4 +2,4 @@ Flask>=1.0,<=1.1.2
 
 googledrivedownloader==0.4
 
-requests==2.2.6
+requests==2.26.0
