@@ -8,7 +8,7 @@ from glob import glob
 
 class UGATIT(object) :
     def __init__(self):
-        self.light = False
+        self.light = True
         self.model_name = 'UGATIT'
         
         self.ch=64
@@ -18,7 +18,7 @@ class UGATIT(object) :
         
         self.dataset="picture2art"
         self.result_dir="results"
-        self.img_size = 128
+        self.img_size = 256
         self.img_ch = 3
 
         self.device = "cpu"
@@ -45,16 +45,20 @@ class UGATIT(object) :
 
     
     def load(self):
-        params = torch.load(os.path.join('model','model.pt'))
+        params = torch.load(os.path.join('model','HokusaiAI.pt'))
         self.genA2B.load_state_dict(params['genA2B'])
         #print(self.genA2B.is_cuda)
         
 
     def test(self,image_name):
-        model_list = glob(os.path.join('model', 'model.pt'))
+        model_list = glob(os.path.join('model', 'HokusaiAI.pt'))
         
         print(torch.__version__)
         
+        
+
+
+
         if not len(model_list) == 0:
             self.load()
             print(" [*] Load SUCCESS")

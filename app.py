@@ -1,8 +1,8 @@
 from flask import Flask, render_template, request, redirect, url_for, send_from_directory
-
+from google_drive_downloader import GoogleDriveDownloader as gdd
 # from werkzeug import secure_filename
 
-
+import os
 
 """
 import cv2
@@ -15,7 +15,7 @@ import numpy as np
 
 #from image_process import canny
 from datetime import datetime
-import os
+
 import string
 import random
 import rstr
@@ -30,7 +30,7 @@ app = Flask(__name__)
 """
 @app.route('/upload')
 def upload_file():
-   return render_template('hokusai.html')
+   return render_template('hackathon.html')
 
 
 @app.route('/uploader', methods = ['GET', 'POST'])
@@ -54,18 +54,25 @@ def uploader_file():
       
       f = request.files['file']
       #f.save(secure_filename(f.filename))
-      return render_template("hokusai.html", user_image = f.filename,chenge_image="/static/images/upload/" + rename_str)
+      return render_template("hackathon.html", user_image = f.filename,chenge_image="/static/images/upload/" + rename_str)
 
 """
 @app.route("/")
 def hello():
-    return render_template('ch.html')
+   if (os.path.exists('./models/HokusaiAI.pt')):
+      return "Hello"
+   else:
+      return "Not Hello"
+    #return render_template('ch.html')
 
 @app.route('/test')
 def test():
    return render_template('hokusai.html')
+
 if __name__ == '__main__':
-    
+   gdd.download_file_from_google_drive(file_id='1xmKOuYYdja_awSjV29EiaU5guIi6nLL0',
+                                    dest_path='./models/HokusaiAI.pt',
+                                    unzip=True)
    
 
    app.run(debug = True)

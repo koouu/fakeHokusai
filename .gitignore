@@ -3,7 +3,10 @@
 *dataset
 *__pycache__
 *assets
+*gd.py
 *torch.txt
+*models/HokusaiAi.pt
+*models/archive
 
 
 
