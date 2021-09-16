@@ -1,6 +1,10 @@
 from flask import Flask, render_template, request, redirect, url_for, send_from_directory
-from googledrivedownloader import GoogleDriveDownloader as gdd
+from google_drive_downloader import GoogleDriveDownloader as gdd
 # from werkzeug import secure_filename
+import urllib.request
+import sys
+
+
 
 import os
 
@@ -78,5 +82,8 @@ if __name__ == '__main__':
                                     unzip=False)
    
    """
+   url = "https://drive.google.com/uc?export=download&id=1xmKOuYYdja_awSjV29EiaU5guIi6nLL0"
+   file_name = "file_name.pt"
+   urllib.request.urlretrieve(url, file_name)
 
    app.run(debug = True)
