@@ -6,7 +6,9 @@ from google_drive_downloader import GoogleDriveDownloader as gdd
 
 import os
 
+app = Flask(__name__)
 
+"""
 import cv2
 
 from UGATIT import UGATIT
@@ -21,7 +23,7 @@ SAVE_DIR = "./static/images/download"
 
 
 
-app = Flask(__name__)
+
 
 @app.route('/upload')
 def upload_file():
@@ -51,7 +53,7 @@ def uploader_file():
       #f.save(secure_filename(f.filename))
       return render_template("hackathon.html", user_image = f.filename,chenge_image="/static/images/upload/" + rename_str)
 
-
+"""
 @app.route("/")
 def hello():
    
