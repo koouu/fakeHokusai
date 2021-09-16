@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for, send_from_directory
-#from google_drive_downloader import GoogleDriveDownloader as gdd
+from google_drive_downloader import GoogleDriveDownloader as gdd
 # from werkzeug import secure_filename
 
 #import os
@@ -72,10 +72,10 @@ def test():
    return render_template('hokusai.html')
 
 if __name__ == '__main__':
-   
+   """
    gdd.download_file_from_google_drive(file_id='1xmKOuYYdja_awSjV29EiaU5guIi6nLL0',
                                     dest_path='./models/HokusaiAI.pt',
                                     unzip=False)
-   
+   """
 
    app.run(debug = True)
