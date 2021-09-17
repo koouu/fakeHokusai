@@ -45,9 +45,18 @@
         <input type="submit" value="変換する" class="btn-send" style="margin-left:200px;" onclick="hokusaiImage();">
         <br>
         <!-- ここにプレビュー画像を追加する -->
-        <img id="preview" src="">
-        <img id="hokusai" src="">
+        <div style="display:flex;">
+          <div style="width:520px;">
+            <img id="preview" src="">
+          </div>
+          <div style="width:520px;">
+            <img id="hokusai" src={{chenge_image}}>
+          </div>
+        </div>
       </div>
     </div>
+    <footer>
+      <small class="copy">(C)宇宙戦艦たむ</small>
+    </footer>
   </body>
 </html>
