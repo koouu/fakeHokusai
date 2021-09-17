@@ -2,10 +2,10 @@ from flask import Flask, render_template, request, redirect, url_for, send_from_
 import os
 #googledrivedownloader==0.4
 #from google_drive_downloader import GoogleDriveDownloader as gdd
-
+"""
 from UGATIT import UGATIT
 
-
+"""
 import os
 
 
@@ -31,7 +31,7 @@ app = Flask(__name__)
 def upload_file():
    return render_template('hackathon.html')
 
-
+"""
 @app.route('/uploader', methods = ['GET', 'POST'])
 def uploader_file():
     
@@ -55,7 +55,7 @@ def uploader_file():
       #f.save(secure_filename(f.filename))
       return render_template("hackathon.html", user_image = f.filename,chenge_image="/static/images/upload/" + rename_str)
 
-
+"""
 @app.route("/")
 def hello():
    
