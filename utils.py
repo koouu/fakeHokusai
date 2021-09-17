@@ -1,7 +1,7 @@
 from scipy import misc
-import os, cv2
-import numpy as np
+import os
 
+"""
 def load_test_data(image_path, size=256):
     img = misc.imread(image_path, mode='RGB')
     img = misc.imresize(img, [size, size])
@@ -59,3 +59,6 @@ def tensor2numpy(x):
 
 def RGB2BGR(x):
     return cv2.cvtColor(x, cv2.COLOR_RGB2BGR)
+
+
+"""
