@@ -1,7 +1,6 @@
 from scipy import misc
-import os, cv2
+import os, cv2, torch
 import numpy as np
-
 """
 def load_test_data(image_path, size=256):
     img = misc.imread(image_path, mode='RGB')
@@ -50,7 +49,12 @@ def cam(x, size = 256):
     cam_img = cv2.applyColorMap(cam_img, cv2.COLORMAP_JET)
     return cam_img / 255.0
 
-
+def imagenet_norm(x):
+    mean = [0.485, 0.456, 0.406]
+    std = [0.299, 0.224, 0.225]
+    mean = torch.FloatTensor(mean).unsqueeze(0).unsqueeze(2).unsqueeze(3).to(x.device)
+    std = torch.FloatTensor(std).unsqueeze(0).unsqueeze(2).unsqueeze(3).to(x.device)
+    return (x - mean) / std
 
 def denorm(x):
     return x * 0.5 + 0.5
@@ -60,6 +64,4 @@ def tensor2numpy(x):
 
 def RGB2BGR(x):
     return cv2.cvtColor(x, cv2.COLOR_RGB2BGR)
-
-
 """
