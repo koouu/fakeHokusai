@@ -1,5 +1,6 @@
 from scipy import misc
-import os
+import os, cv2
+import numpy as np
 
 """
 def load_test_data(image_path, size=256):
