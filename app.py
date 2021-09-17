@@ -10,7 +10,7 @@ from UGATIT import UGATIT
 
 
 
-import cv2
+#import cv2
 import rstr
 
 #from utils import *
