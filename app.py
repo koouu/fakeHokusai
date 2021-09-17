@@ -1,19 +1,19 @@
 from flask import Flask, render_template, request, redirect, url_for, send_from_directory
-import os
 #googledrivedownloader==0.4
 #from google_drive_downloader import GoogleDriveDownloader as gdd
 
 from UGATIT import UGATIT
 
 
+import os
 
-
+app = Flask(__name__)
 
 
 import cv2
 import rstr
 
-#from utils import *
+from utils import *
 
 
 
@@ -23,14 +23,14 @@ import rstr
 SAVE_DIR = "./static/images/download"
 
 
-app = Flask(__name__)
+
 
 
 @app.route('/upload')
 def upload_file():
    return render_template('hackathon.html')
 
-"""
+
 @app.route('/uploader', methods = ['GET', 'POST'])
 def uploader_file():
     
@@ -54,13 +54,13 @@ def uploader_file():
       #f.save(secure_filename(f.filename))
       return render_template("hackathon.html", user_image = f.filename,chenge_image="/static/images/upload/" + rename_str)
 
-"""
+
 @app.route("/")
 def hello():
    
-   if (os.path.exists('./models/HokusaiAI.pt')):
+   if (os.path.exists('fakeHokusai/models/HokusaiAI.pt')):
       return "Hello"
-   elif (os.path.exists('./models/.txt')):
+   elif (os.path.exists('models/HokusaiAI.pt')):
       return "t Hello"
    else:
       return "Not Hello"
@@ -73,4 +73,4 @@ def test():
 
 if __name__ == '__main__':
    
-   app.run(debug = True)
+   app.run(debug=True) #, port=8080)

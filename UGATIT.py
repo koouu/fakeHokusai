@@ -43,14 +43,14 @@ class UGATIT(object) :
 
     
     def load(self):
-        params = torch.load(os.path.join('model','HokusaiAI.pt'))
+        params = torch.load(os.path.join('models','HokusaiAI.pt'))
         self.genA2B.load_state_dict(params['genA2B'])
         #print(self.genA2B.is_cuda)
         
 
     def test(self,image_name):
         
-        model_list = glob(os.path.join('model', 'HokusaiAI.pt'))
+        model_list = glob(os.path.join('models', 'HokusaiAI.pt'))
         
         print(torch.__version__)
         
@@ -103,7 +103,7 @@ class UGATIT(object) :
                                   RGB2BGR(tensor2numpy(denorm(fake_A2B[0])))), 0)
 
             
-            cv2.imwrite(os.path.join('static','images','upload', image_name), RGB2BGR(tensor2numpy(denorm(fake_A2B[0]))) * 255.0)
+            cv2.imwrite(os.path.join('fakeHokusai','static','images','upload', image_name), RGB2BGR(tensor2numpy(denorm(fake_A2B[0]))) * 255.0)
             
     
         
