@@ -6,12 +6,11 @@ import os
 from UGATIT import UGATIT
 
 """
-import os
 
 
 
 
-import cv2
+#import cv2
 import rstr
 
 from utils import *
