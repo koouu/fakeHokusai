@@ -1,8 +1,8 @@
 
 from dataset import ImageFolder
 from torchvision import transforms
-#from torch.utils.data import DataLoader
-#from networks import *
+from torch.utils.data import DataLoader
+from networks import *
 from utils import *
 from glob import glob
 
@@ -31,7 +31,7 @@ class UGATIT(object) :
     ##################################################################################
     # Model
     ##################################################################################
-    """
+    
     def build_model(self):
         
         
@@ -79,7 +79,7 @@ class UGATIT(object) :
         
         testA_loader = DataLoader(testA, batch_size=1, shuffle=False)
         
-        ""
+        """
         real_A = real_A.to(self.device)
 
         fake_A2B, _, fake_A2B_heatmap = self.genA2B(real_A)
@@ -90,21 +90,21 @@ class UGATIT(object) :
         cv2.imwrite(os.path.join(self.result_dir, self.dataset, 'test', 'Base_%d.png' % (n + 1)), RGB2BGR(tensor2numpy(denorm(real_A[0]))) * 255.0)
             
         cv2.imwrite(os.path.join(self.result_dir, self.dataset, 'test', 'A2B_%d.png' % (n + 1)), RGB2BGR(tensor2numpy(denorm(fake_A2B[0]))) * 255.0)
-        ""
+        """
         for n, (real_A, _) in enumerate(testA_loader):
             real_A = real_A.to(self.device)
             print(type(real_A))
             fake_A2B, _, _ = self.genA2B(real_A)
-            ""
+            """
             fake_A2B2A, _, fake_A2B2A_heatmap = self.genB2A(fake_A2B)
 
             fake_A2A, _, fake_A2A_heatmap = self.genB2A(real_A)
-            ""
+            """
             A2B = np.concatenate((RGB2BGR(tensor2numpy(denorm(real_A[0]))),
                                   RGB2BGR(tensor2numpy(denorm(fake_A2B[0])))), 0)
 
             
             cv2.imwrite(os.path.join('static','images','upload', image_name), RGB2BGR(tensor2numpy(denorm(fake_A2B[0]))) * 255.0)
             
-    """
+    
         

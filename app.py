@@ -9,9 +9,9 @@ import os
 
 app = Flask(__name__)
 
-"""
-import cv2
 
+import cv2
+import rstr
 
 from utils import *
 
@@ -54,7 +54,7 @@ def uploader_file():
       #f.save(secure_filename(f.filename))
       return render_template("hackathon.html", user_image = f.filename,chenge_image="/static/images/upload/" + rename_str)
 
-"""
+
 @app.route("/")
 def hello():
    
