@@ -20,3 +20,7 @@ $(function () {
         return false;
    });
 });
+
+function hokusaiImage(){
+  window.location.reload();
+}

@@ -6,7 +6,7 @@ torch==1.8.0+cpu
 torchaudio==0.8.0
 torchvision==0.9.0
 
-opencv-python==3.4.13.47
+opencv-python--headless==3.4.13.47
 
 requests==2.26.0
 
@@ -18,5 +18,4 @@ Pillow==8.2.0
 
 rstr==2.2.6
 
-gunicorn==20.1.0
 

@@ -14,6 +14,13 @@ body{
 p,h1,h2,h3,h4,h5,h6{
   margin-top:0;
 }
+footer{
+  text-align: center;
+  display: flex;
+  color:#FFFFFF;
+  padding: 15px 0;
+  background-color: #5E5E5E;
+}
 #header{
   background-color: #D76213;
   min-width: 1000px;
@@ -31,6 +38,11 @@ p,h1,h2,h3,h4,h5,h6{
   width: 500px;
   margin: 10px;
 }
+#hokusai{
+  width: 500px;
+  margin: 10px;
+}
+
 .p1{
   font-size: 30px;
   padding-top: 20px;
@@ -176,4 +188,8 @@ label>input{
 .btn-send:hover {
   background: #D76213;
   color: white;
+}
+.copy{
+  margin-left: auto;
+  margin-right:auto;
 }

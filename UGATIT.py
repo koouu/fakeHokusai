@@ -48,7 +48,7 @@ class UGATIT(object) :
         #print(self.genA2B.is_cuda)
         
 
-    def test(self,image_name):
+    def test(self,image_name,height,width):
         
         model_list = glob(os.path.join('models', 'HokusaiAI.pt'))
         
@@ -74,7 +74,7 @@ class UGATIT(object) :
             transforms.Normalize(mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5))
         ])
         
-        testA = ImageFolder(os.path.join('static','images','download'), test_transform)
+        testA = ImageFolder(os.path.join('static','images','download'),image_name, test_transform)
         
         testA_loader = DataLoader(testA, batch_size=1, shuffle=False)
         
@@ -102,8 +102,9 @@ class UGATIT(object) :
             A2B = np.concatenate((RGB2BGR(tensor2numpy(denorm(real_A[0]))),
                                   RGB2BGR(tensor2numpy(denorm(fake_A2B[0])))), 0)
 
-            
-            cv2.imwrite(os.path.join('fakeHokusai','static','images','upload', image_name), RGB2BGR(tensor2numpy(denorm(fake_A2B[0]))) * 255.0)
+            change_img=RGB2BGR(tensor2numpy(denorm(fake_A2B[0]))) * 255.0
+            resize_img=cv2.resize(change_img,dsize=(width, height) )
+            cv2.imwrite(os.path.join('static','images','upload', image_name), resize_img)
             
     
         
