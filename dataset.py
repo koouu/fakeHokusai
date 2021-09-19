@@ -28,14 +28,9 @@ def find_classes(dir):
 
 def make_dataset(dir, extensions,image_name):
     images = []
-    for root, _, fnames in sorted(os.walk(dir)):
-        for fname in sorted(fnames):
-            if fname=="aa.png":
-                print("aa.pngpng")
-            if has_file_allowed_extension(fname, extensions) and fname == image_name:
-                path = os.path.join(root, fname)
-                item = (path, 0)
-                images.append(item)
+    path = os.path.join('static','images','download', image_name)
+    item = (path, 0)
+    images.append(item)
 
     return images
 
