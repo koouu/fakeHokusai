@@ -35,21 +35,6 @@ class UGATIT(object) :
         
         
         self.genA2B = ResnetGenerator(input_nc=3, output_nc=3, ngf=self.ch, n_blocks=self.n_res, img_size=self.img_size, light=self.light).to(self.device)
-        
-        
-        
-        
-        
-
-    
-    def load(self):
-        params = torch.load(os.path.join('models','HokusaiAI.pt'))
-        self.genA2B.load_state_dict(params['genA2B'])
-        #print(self.genA2B.is_cuda)
-        
-
-    def test(self,image_name,height,width):
-        
         model_list = glob(os.path.join('models', 'HokusaiAI.pt'))
         
         print(torch.__version__)
@@ -66,6 +51,21 @@ class UGATIT(object) :
             return
 
         self.genA2B.eval()#, self.genB2A.eval()
+        
+        
+        
+        
+
+    
+    def load(self):
+        params = torch.load(os.path.join('models','HokusaiAI.pt'))
+        self.genA2B.load_state_dict(params['genA2B'])
+        #print(self.genA2B.is_cuda)
+        
+
+    def test(self,image_name,height,width):
+        
+        
         
         
         test_transform = transforms.Compose([
