@@ -42,7 +42,7 @@ def hokusai():
       
       f = request.files['file']
       #f.save(secure_filename(f.filename))
-      return render_template("hokusai.html", user_image = f.filename,chenge_image="/static/images/upload/" + rename_str)
+      return render_template("hokusai.html", user_image = f.filename,chenge_image="/static/images/upload/" + rename_str,before_image="/static/images/download/" + rename_str)
 
    return render_template('hokusai.html')
 
