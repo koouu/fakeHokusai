@@ -1,17 +1,11 @@
-from flask import Flask, render_template, request, redirect, url_for, send_from_directory
-
-from UGATIT import UGATIT
-
-
+from flask import Flask, render_template, request
 import os
-
-app = Flask(__name__)
-
-
 import cv2
 import rstr
-
+from UGATIT import UGATIT
 from utils import *
+
+app = Flask(__name__)
 
 SAVE_DIR = "./static/images/download"
 gan=UGATIT()
