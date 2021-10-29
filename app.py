@@ -4,6 +4,7 @@ import cv2
 import rstr
 from UGATIT import UGATIT
 from utils import *
+import csv
 
 app = Flask(__name__)
 
@@ -40,12 +41,51 @@ def hokusai():
 
 @app.route('/questions', methods = ['GET', 'POST'])
 def question():
+   type_list=['type',1,2,3,4,5]
+   like_list=['like']
+   play_list=['play']
+   with open('data.csv', 'r') as f:
+      
+      reader = csv.DictReader(f)
+      
+      for row in reader:
+         cnt=0
+         for i in row:
+            
+            
+            if row['type']=='play' and cnt!=0:
+               play_list.append(int(row[str(cnt)]))
+            if row['type']=='like' and cnt!=0:
+               like_list.append(int(row[str(cnt)]))
+            cnt=cnt+1
+         print(row)
+      f.close()
+      
    
-    
    if request.method == 'POST':
-      print(request.form['impression'])
+      if request.form['impression']!='':
+         with open('impression.txt', 'a') as f:
+            f.write(request.form['impression']+'\n')
+            f.close()
+      if request.form['next']!='':
+         with open('next.txt', 'a') as f:
+            f.write(request.form['next']+'\n')
+            f.close()
+
+      
+
+         print(request.form['impression'])
+      for i in request.form.getlist('play'):
+         play_list[int(i)]=play_list[int(i)]+1
+      for i in request.form.getlist('like'):
+         like_list[int(i)]=like_list[int(i)]+1
       print(request.form.getlist('like'))
-         
+      print(like_list)
+      with open('data.csv', 'w', newline='') as f:
+         writer = csv.writer(f)
+         writer.writerow(type_list)
+         writer.writerow(play_list)
+         writer.writerow(like_list)
       return render_template("thankyou.html")
 
    return render_template('question.html')
