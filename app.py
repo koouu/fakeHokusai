@@ -38,6 +38,18 @@ def hokusai():
 
    return render_template('hokusai.html')
 
+@app.route('/questions', methods = ['GET', 'POST'])
+def question():
+   
+    
+   if request.method == 'POST':
+      print(request.form['impression'])
+      print(request.form.getlist('like'))
+         
+      return render_template("thankyou.html")
+
+   return render_template('question.html')
+
 
 if __name__ == '__main__':
    
